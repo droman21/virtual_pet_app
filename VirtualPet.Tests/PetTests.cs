@@ -1,11 +1,12 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 using Xunit;
 
 namespace VirtualPet.Tests
 {
     public class PetTests
     {
-        private Pet testPet;
+        public Pet testPet;
 
         public PetTests()
         {
@@ -25,25 +26,27 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Name()
         {
-            // Assert.NotNull(testPet.Name);
+            Assert.NotNull(testPet.Name);
         }
 
         [Fact]
         public void SetName_Should_Assign_Pet_Name_Property()
         {
-            //testPet.SetName("Fluffy");
+            testPet.SetName("Fluffy");
 
-            //Assert.Equal("Fluffy", testPet.Name);
+            Assert.Equal("Fluffy", testPet.Name);
+            
+
         }
 
         [Fact]
         public void GetName_Should_Get_Pet_Name_Value()
         {
-            //testPet.SetName("Fido");
+            testPet.SetName("Fido");
 
-            //string testPetName = testPet.GetName();
+            string testPetName = testPet.GetName("Fido");
 
-            //Assert.Equal("Fido", testPetName);
+            Assert.Equal("Fido", testPetName);
         }
 
         [Fact]
@@ -55,9 +58,9 @@ namespace VirtualPet.Tests
         [Fact]
         public void SetSpecies_Should_Assign_Pet_Species_Property()
         {
-            //testPet.SetSpecies("Cat");
+            testPet.SetSpecies("Cat");
 
-            //Assert.Equal("Cat", testPet.Species);
+            Assert.Equal("Cat", testPet.Species);
         }
 
         [Fact]
