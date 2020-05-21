@@ -26,9 +26,15 @@ namespace VirtualPet
                 {
                     case "1":
                         //PickaPet();
+                        Console.WriteLine("Cat");
+                            Console.ReadLine()
+                        Console.WriteLine("Dog");
+                            Console.ReadLine()
                         break;
                     case "2":
-                      //  NamePet();
+                        //  NamePet();
+                        Console.WriteLine("Please enter your pet's name");
+                        Console.ReadLine();
                         break;
                     case "3":
                       //  FeedPet();
