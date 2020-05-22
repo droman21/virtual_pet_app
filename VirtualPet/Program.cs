@@ -8,13 +8,14 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
+            Pet newPet = new Pet();
             bool keepThinking = true;
             while (keepThinking)
             {
                 Console.Clear();
                 Console.WriteLine("Hello and Welcome to Dan's Pet Shop!\n");
                 Console.WriteLine("Which task would you like to perform?");
-                Console.WriteLine("1. Pick a Pet");
+                //Console.WriteLine("1. Pick a Pet");
                 Console.WriteLine("2. Name My Pet");
                 Console.WriteLine("3. Feed My Pet");
                 Console.WriteLine("4. Check Status of My Pet");
@@ -26,21 +27,20 @@ namespace VirtualPet
                 {
                     case "1":
                         //PickaPet();
-                        Console.WriteLine("Cat");
-                            Console.ReadLine()
-                        Console.WriteLine("Dog");
-                            Console.ReadLine()
+                       
                         break;
                     case "2":
                         //  NamePet();
                         Console.WriteLine("Please enter your pet's name");
-                        Console.ReadLine();
+                        string petName = Console.ReadLine();
+                        newPet.SetName(petName);
                         break;
                     case "3":
                       //  FeedPet();
                         break;
                     case "4":
-                      //  CheckStatus();
+                        //  CheckStatus();
+                        Console.WriteLine();
                         break;
                     case "5":
                     // VisitDoc();
