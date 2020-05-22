@@ -51,7 +51,7 @@ namespace VirtualPet.Tests
         {
             Assert.NotNull(testPet.Species);
             testPet.Species = "Pet Species";
-            Assert.Equal("Pet Species, testPet.Species");
+            Assert.Equal("Pet Species", testPet.Species);
         }
 
         [Fact]
@@ -88,8 +88,6 @@ namespace VirtualPet.Tests
         public void Pet_Should_Have_Boredom()
         {
             testPet.Boredom = 100;
-
-            
             Assert.Equal(100, testPet.Boredom);
         }
 
@@ -98,13 +96,17 @@ namespace VirtualPet.Tests
         {
             // int testPetBoredom = testPet.GetBoredom();
 
+
             // Assert.Equal(60, testPetBoredom);
         }
 
         [Fact]
         public void Pet_Should_Have_Health()
         {
-            // Assert.NotNull(testPet.Health);
+            {
+                testPet.Health = 100;
+                Assert.Equal(100, testPet.Health);
+            }
         }
 
         [Fact]

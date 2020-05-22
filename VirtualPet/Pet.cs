@@ -20,15 +20,15 @@ namespace VirtualPet
         {
             Name = name;
             Species = species;
-            Hunger = 30;
-            Boredom = 25;
-            Health = 47;
+            Hunger = 50;
+            Boredom = 60;
+            Health = 30;
         }
         public Pet()
         {
-            Hunger = 30;
-            Boredom = 25;
-            Health = 47;
+            Hunger = 50;
+            Boredom = 60;
+            Health = 30;
         }
 
         public void SetSpecies(string species)
@@ -51,7 +51,15 @@ namespace VirtualPet
         }
         public void Feed()
         {
-            Hunger = Hunger - 15;
+            Hunger = Hunger - 40;
+        }
+        public void SeeDoctor()
+        {
+            Health = Health + 30;
+        }
+        public void Play()
+        {
+            Boredom = Boredom - 20;
         }
     }
     
