@@ -34,8 +34,6 @@ namespace VirtualPet.Tests
         {
             testPet.SetName("Fluffy");
             Assert.Equal("Fluffy", testPet.Name);
-            
-
         }
 
         [Fact]
@@ -44,6 +42,11 @@ namespace VirtualPet.Tests
             testPet.SetName("Fido");
             string testPetName = nameof("Fido");
             Assert.Equal("Fido", testPetName);
+        }
+        public string Name
+        {
+            get { return this.Name; }
+            set { this.Name = value; }
         }
 
         [Fact]
