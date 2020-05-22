@@ -97,10 +97,8 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetBoredom_Should_Return_Initial_Boredom_Level_Of_60()
         {
-            // int testPetBoredom = testPet.GetBoredom();
-
-
-            // Assert.Equal(60, testPetBoredom);
+            int testPetBoredom = testPet.GetBoredom();
+            Assert.Equal(60, testPet.Boredom);
         }
 
         [Fact]
