@@ -38,16 +38,26 @@ namespace VirtualPet
         public void SetName(string name)
         {
             Name = name;
-
         }
         public string GetName()
         {
             return Name;
-
         }
         public string GetSpecies()
         {
             return Species;
+        }
+        public int GetHunger()
+        {
+            return Hunger;
+        }
+        public int GetHealth()
+        {
+            return Health;
+        }
+        public int GetBoredom()
+        {
+            return Boredom;
         }
         public void Feed()
         {
