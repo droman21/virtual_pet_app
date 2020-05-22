@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Text;
 
 namespace VirtualPet
@@ -34,8 +35,11 @@ namespace VirtualPet
         {
             return species;
         }
-        public void Hunger(string int)
+        public double Hunger()
         {
-            Hunger = 50;
+        return Hunger;
         }
+        public double Boredom { get; set; }
+    
+
 }
