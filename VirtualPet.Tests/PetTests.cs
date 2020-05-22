@@ -40,8 +40,7 @@ namespace VirtualPet.Tests
         public void GetName_Should_Get_Pet_Name_Value()
         {
             testPet.SetName("Fido");
-            string testPetName = nameof("Fido");
-            Assert.Equal("Fido", testPetName);
+            Assert.Equal("Fido", testPet.Name);
         }
         public string Name
         {
