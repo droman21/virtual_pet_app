@@ -36,14 +36,18 @@ namespace VirtualPet
                         newPet.SetName(petName);
                         break;
                     case "3":
-                      //  FeedPet();
+                        //  FeedPet();
+                        Console.WriteLine("Your pet is hunger. Feed it!");
+                        string feedPet = Console.ReadLine();
                         break;
                     case "4":
                         //  CheckStatus();
-                        Console.WriteLine();
+                        Console.WriteLine("How is my pet doing?");
+                        
                         break;
                     case "5":
-                    // VisitDoc();
+                        // VisitDoc();
+                        
                     case "d":
                         keepThinking = false;
                         Console.WriteLine("Good Bye! Thanks for Visiting!");
