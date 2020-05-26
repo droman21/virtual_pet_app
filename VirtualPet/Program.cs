@@ -15,7 +15,7 @@ namespace VirtualPet
                 Console.Clear();
                 Console.WriteLine("Hello and Welcome to Dan's Pet Shop!\n");
                 Console.WriteLine("Which task would you like to perform?");
-                //Console.WriteLine("1. Pick a Pet");
+                Console.WriteLine("1. Pick a Pet");
                 Console.WriteLine("2. Name My Pet");
                 Console.WriteLine("3. Feed My Pet");
                 Console.WriteLine("4. Check Status of My Pet");
@@ -27,18 +27,21 @@ namespace VirtualPet
                 {
                     case "1":
                         //PickaPet();
-                       
+                        Console.WriteLine("Please enter the type of pet you'd like");
+                        string petType = Console.ReadLine();
+                        
                         break;
                     case "2":
-                        //  NamePet();
+                        // NamedPet();
                         Console.WriteLine("Please enter your pet's name");
                         string petName = Console.ReadLine();
                         newPet.SetName(petName);
                         break;
                     case "3":
-                        //  FeedPet();
+                        //FedPet();
                         Console.WriteLine("Your pet is hunger. Feed it!");
                         string feedPet = Console.ReadLine();
+                        
                         break;
                     case "4":
                         //  CheckStatus();
@@ -47,7 +50,7 @@ namespace VirtualPet
                         break;
                     case "5":
                         // VisitDoc();
-                        
+                        Console.WriteLine("My pet isn't doing so good. I need to take him to the doctor.");
                     case "d":
                         keepThinking = false;
                         Console.WriteLine("Good Bye! Thanks for Visiting!");
