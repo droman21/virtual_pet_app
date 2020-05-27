@@ -9,16 +9,17 @@ namespace VirtualPet
     public class Shelter
     {
         //Ability for players to admit pets into the shelter or adopt them
-       
+       public void AddPet (Pet myPet)
+        {
+            PetList.Add(myPet);
+        }
+
 
 
         //Ability for players to see a list of all pets in the shelter
         List<Pet> PetList = new List<Pet>();
 
         
-        
-
-
 
         //Ability for players to see the current status of all pets at once, such as hunger, boredom, and health
         public void PrintAllPets()

@@ -113,7 +113,6 @@ namespace VirtualPet.Tests
         public void GetHealth_Should_Return_Initial_Health_Level_Of_30()
         {
             int testPetHealth = testPet.GetHealth();
-            
             Assert.Equal(30, testPet.Health);
         }
 
@@ -122,9 +121,7 @@ namespace VirtualPet.Tests
         {
             testPet.Hunger = 50;
             int testPetHunger = testPet.GetHunger();
-
             testPet.Feed();
-
             Assert.Equal(testPetHunger - 10, testPet.GetHunger());
         }
 
@@ -133,9 +130,7 @@ namespace VirtualPet.Tests
         {
             testPet.Health = 30;
             int testPetHealth = testPet.GetHealth();
-
             testPet.SeeDoctor();
-
             Assert.Equal(testPetHealth + 30, testPet.GetHealth());
         }
 
@@ -144,9 +139,7 @@ namespace VirtualPet.Tests
         {
             testPet.Hunger = 50;
             int testPetHealth = testPet.GetHunger();
-            
             testPet.Play();
-
             Assert.Equal(testPetHealth + 10, testPet.GetHunger());
         }
 
@@ -155,9 +148,7 @@ namespace VirtualPet.Tests
         {
             testPet.Boredom = 60;
             int testPetBoredom = testPet.GetBoredom();
-            
             testPet.Play();
-
             Assert.Equal(testPetBoredom - 20, testPet.GetBoredom());
         }
 
@@ -166,9 +157,7 @@ namespace VirtualPet.Tests
         {
             testPet.Health = 30;
             int testPetHealth = testPet.GetHealth();
-            
             testPet.Play();
-
             Assert.Equal(testPetHealth + 10, testPet.GetHealth());
         }
 
@@ -177,9 +166,7 @@ namespace VirtualPet.Tests
         {
             testPet.Hunger = 50;
             int testPetHunger = testPet.GetHunger();
-            
             testPet.Tick();
-
             Assert.Equal(testPetHunger + 5, testPet.GetHunger());
         }
 
@@ -188,9 +175,7 @@ namespace VirtualPet.Tests
         {
             testPet.Boredom = 60;
             int testPetBoredom = testPet.GetBoredom();
-            
             testPet.Tick();
-
             Assert.Equal(testPetBoredom + 5, testPet.GetBoredom());
         }
 
@@ -199,9 +184,7 @@ namespace VirtualPet.Tests
         {
             testPet.Health = 30;
             int testPetHealth = testPet.GetHealth();
-            
             testPet.Tick();
-
             Assert.Equal(testPetHealth - 5, testPet.GetHealth());
         }
     }

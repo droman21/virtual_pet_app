@@ -69,23 +69,23 @@ namespace VirtualPet
         }
         public void Feed()
         {
-            Hunger = Hunger - 40;
+            Hunger -= 40;
         }
         public void SeeDoctor()
         {
-            Health = Health + 30;
+            Health += 30;
         }
         public void Play()
         {
-            Hunger = Hunger + 10;
-            Boredom = Boredom - 20;
-            Health = Health + 10;
+            Hunger += 10;
+            Boredom -= 20;
+            Health += 10;
         }
         public void Tick()
         {
-            Hunger = Hunger + 5;
-            Boredom = Boredom + 5;
-            Health = Health - 5;
+            Hunger += 5;
+            Boredom += 5;
+            Health -= 5;
         }
         public void AddPet()
         {
