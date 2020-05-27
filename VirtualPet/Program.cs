@@ -20,6 +20,7 @@ namespace VirtualPet
                 Console.WriteLine("3. Feed My Pet");
                 Console.WriteLine("4. Check Status of My Pet");
                 Console.WriteLine("5. Take Pet to Doctor");
+                Console.WriteLine("6. Add Pet to Shelter");
 
                 string userChoice = Console.ReadLine().ToLower();
 
@@ -29,7 +30,7 @@ namespace VirtualPet
                         //PickaPet();
                         Console.WriteLine("Please enter the type of pet you'd like");
                         string petType = Console.ReadLine();
-                        
+                        newPet.SetPetType(petType);
                         break;
                     case "2":
                         // NamedPet();
@@ -51,6 +52,12 @@ namespace VirtualPet
                     case "5":
                         // VisitDoc();
                         Console.WriteLine("My pet isn't doing so good. I need to take him to the doctor.");
+                    case "6":
+                        // AddPett();
+                        Console.WriteLine("Which pet would you like to add to the shelter?");
+                        newPet.SetPetType(Console.ReadLine());
+                        masterPetList.AddPet(newPet);
+                        break;
                     case "d":
                         keepThinking = false;
                         Console.WriteLine("Good Bye! Thanks for Visiting!");

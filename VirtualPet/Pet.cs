@@ -39,6 +39,10 @@ namespace VirtualPet
         {
             Name = name;
         }
+        public void SetPetType(string type)
+        {
+            PetType = type;
+        }
         public string GetPetType()
         {
             return PetType;
