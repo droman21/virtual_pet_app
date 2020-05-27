@@ -9,6 +9,7 @@ namespace VirtualPet
         static void Main(string[] args)
         {
             Pet newPet = new Pet();
+            Shelter petShelter = new Shelter();
             bool keepThinking = true;
             while (keepThinking)
             {
@@ -31,6 +32,9 @@ namespace VirtualPet
                         Console.WriteLine("Please enter the type of pet you'd like");
                         string petType = Console.ReadLine();
                         newPet.SetPetType(petType);
+                        Console.WriteLine("Please enter your pet's name");
+                        string petName = Console.ReadLine();
+                        newPet.SetName(petName);
                         break;
                     case "2":
                         // NamedPet();
@@ -52,6 +56,7 @@ namespace VirtualPet
                     case "5":
                         // VisitDoc();
                         Console.WriteLine("My pet isn't doing so good. I need to take him to the doctor.");
+                        break;
                     case "6":
                         // AddPett();
                         Console.WriteLine("Which pet would you like to add to the shelter?");
@@ -65,7 +70,7 @@ namespace VirtualPet
                     default:
                         break;
 
-
+                        
                 }
             }
 
