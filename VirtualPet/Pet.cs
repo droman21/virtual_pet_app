@@ -87,14 +87,7 @@ namespace VirtualPet
             Boredom += 5;
             Health -= 5;
         }
-        public void AddPet()
-        {
-            //All options for adding pet
-        }
-        public void PrintPetStatus()
-        {
-
-        }
+        
     }
     
 

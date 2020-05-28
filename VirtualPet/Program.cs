@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Transactions;
 
 namespace VirtualPet
@@ -12,50 +13,51 @@ namespace VirtualPet
             Shelter petShelter = new Shelter();
             bool keepThinking = true;
             while (keepThinking)
+            
             {
                 Console.Clear();
-                Console.WriteLine("Hello and welcome to the Perrysburg Pet Shelter!\n");
-                Console.WriteLine("Which task would you like to perform?");
+                Console.WriteLine("Hi and Welcome to the Perrysburg Pet Shelter!");
+                Console.WriteLine("What would you like to do?");
                 Console.WriteLine("1. Feed the Pets");
-                Console.WriteLine("2. Water the Pets");
+                Console.WriteLine("2. Play with all of the Pets");
                 Console.WriteLine("3. Play with a Pet");
                 Console.WriteLine("4. Adopt a Pet");
                 Console.WriteLine("5. Admit a Pet");
                 Console.WriteLine("6. Quit");
 
-                string userChoice = Console.ReadLine().ToLower();
+                string menuChoice = Console.ReadLine().ToLower();
 
-                switch (userChoice)
+                switch (menuChoice)
                 {
                     case "1":
-                        Console.WriteLine("Please enter the type of pet you'd like to admit");
-                        string petType = Console.ReadLine();
-                        newPet.SetPetType(petType);
-                        Console.WriteLine("Please enter your pet's name");
-                        string petName = Console.ReadLine();
-                        newPet.SetName(petName);
+                        petShelter.PrintAllPets();
+                        petShelter.FeedAll();
+                        Console.WriteLine("You feed the pets!");
                         break;
                     case "2":
-                        Console.WriteLine("Please enter your pet's name");
-                        string petName = Console.ReadLine();
-                        newPet.SetName(petName);
+                        petShelter.PrintAllPets();
+                        petShelter.PlayAll();
+                        Console.WriteLine("You played with the pets!");
                         break;
                     case "3":
-                        Console.WriteLine("Your pet is hunger. Feed it!");
-                        string feedPet = Console.ReadLine();
+                        petShelter.PrintAllPets();
+                        Console.WriteLine("Which pet would you like to play with?");
+                        int partNumber = Convert.ToInt32(Console.ReadLine());
+                        Pet petToChoose = petShelter.FindPetByIndex(petNumber - 1);
+                        petToChoose.Play();
                         break;
                     case "4":
-                        Console.WriteLine("How is my pet doing?");
+                        petShelter.PrintAllPets();
+                        
+                        
                         break;
                     case "5":
-                        Console.WriteLine("My pet isn't doing so good. I need to take him to the doctor.");
-                        break;
-                    case "6":
+                        petShelter.PrintAllPets();
                         Console.WriteLine("Which pet would you like to add to the shelter?");
                         newPet.SetPetType(Console.ReadLine());
                         masterPetList.AddPet(newPet);
                         break;
-                    case "d":
+                    case "6":
                         keepThinking = false;
                         Console.WriteLine("Good Bye! Thanks for Visiting!");
                         break;
@@ -67,5 +69,7 @@ namespace VirtualPet
             }
 
         }
+        
     }
+
 }
