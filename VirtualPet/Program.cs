@@ -15,49 +15,59 @@ namespace VirtualPet
             while (keepThinking)
             
             {
-                Console.Clear();
+
                 Console.WriteLine("Hi and Welcome to the Perrysburg Pet Shelter!");
                 Console.WriteLine("What would you like to do?");
-                Console.WriteLine("1. Feed the Pets");
-                Console.WriteLine("2. Play with all of the Pets");
-                Console.WriteLine("3. Play with a Pet");
-                Console.WriteLine("4. Adopt a Pet");
-                Console.WriteLine("5. Admit a Pet");
-                Console.WriteLine("6. Quit");
-
+                Console.WriteLine("1. Bringing in a new Pet?");
+                Console.WriteLine("2. Feed the Pets");
+                Console.WriteLine("3. Play with all of the Pets");
+                Console.WriteLine("4. Play with a single Pet");
+                Console.WriteLine("5. Adopt a Pet");
+                Console.WriteLine("6. Admit a Pet");
+                Console.WriteLine("7. Quit");
+                Console.Clear();
                 string menuChoice = Console.ReadLine().ToLower();
 
                 switch (menuChoice)
                 {
                     case "1":
-                        petShelter.PrintAllPets();
-                        petShelter.FeedAll();
-                        Console.WriteLine("You feed the pets!");
+                        Console.WriteLine("What is your pet's name?");
+                        string name = Console.ReadLine();
+                        newPet.SetName(name);
+
+                        Console.WriteLine("What species is your pet?");
+                        string species = Console.ReadLine();
+                        newPet.SetSpecies(species);
                         break;
                     case "2":
+                        petShelter.PrintAllPets();
+                        petShelter.FeedAll();
+                        Console.WriteLine("You fed the pets!");
+                        break;
+                    case "3":
                         petShelter.PrintAllPets();
                         petShelter.PlayAll();
                         Console.WriteLine("You played with the pets!");
                         break;
-                    case "3":
-                        petShelter.PrintAllPets();
-                        Console.WriteLine("Which pet would you like to play with?");
-                        int partNumber = Convert.ToInt32(Console.ReadLine());
-                        Pet petToChoose = petShelter.FindPetByIndex(petNumber - 1);
-                        petToChoose.Play();
-                        break;
                     case "4":
                         petShelter.PrintAllPets();
-                        
-                        
+                        Console.WriteLine("Which pet would you like to play with?");
+                        newPet.SetPetType(Console.ReadLine());
+                        newPet.Play();
                         break;
                     case "5":
                         petShelter.PrintAllPets();
-                        Console.WriteLine("Which pet would you like to add to the shelter?");
+                        Console.WriteLine("Which pet would you like to adpot?");
                         newPet.SetPetType(Console.ReadLine());
-                        masterPetList.AddPet(newPet);
+                        petShelter.RemovePet(newPet);
                         break;
                     case "6":
+                        petShelter.PrintAllPets();
+                        Console.WriteLine("Which pet would you like to add to the shelter?");
+                        newPet.SetPetType(Console.ReadLine());
+                        petShelter.AddPet(newPet);
+                        break;
+                    case "7":
                         keepThinking = false;
                         Console.WriteLine("Good Bye! Thanks for Visiting!");
                         break;
