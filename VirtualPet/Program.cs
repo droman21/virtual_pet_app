@@ -25,7 +25,7 @@ namespace VirtualPet
                 Console.WriteLine("5. Adopt a Pet");
                 Console.WriteLine("6. Admit a Pet");
                 Console.WriteLine("7. Quit");
-                Console.Clear();
+                //Console.Clear();
                 string menuChoice = Console.ReadLine().ToLower();
 
                 switch (menuChoice)
