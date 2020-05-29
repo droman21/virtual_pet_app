@@ -11,23 +11,11 @@ namespace VirtualPet
     {
         public string myPetShelter { get; set; }
 
-
-
-        //Ability for players to admit pets into the shelter or adopt them
-
         public List<Pet> allPets = new List<Pet>();
-
-        
-       
-
-
-        //Ability for players to see a list of all pets in the shelter
         
         List<Pet> PetList = new List<Pet>();
        
 
-
-        //Ability for players to see the current status of all pets at once, such as hunger, boredom, and health
         public void PrintAllPets()
         {
             foreach (Pet pet in PetList)
@@ -36,9 +24,6 @@ namespace VirtualPet
             }
         }
 
-
-
-        //Ability for players to choose to interact with one pet or multiple pets, such as feed, play, and take to doctor
         public void FeedAll()
         {
             foreach (Pet pet in PetList)

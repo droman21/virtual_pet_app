@@ -11,14 +11,15 @@ namespace VirtualPet
         {
             Pet newPet = new Pet();
             Shelter petShelter = new Shelter();
+            petShelter.AddPet(newPet);
             bool keepThinking = true;
             while (keepThinking)
             
             {
-
+                Console.WriteLine ($"{petShelter.PrintAllPets()}");
                 Console.WriteLine("Hi and Welcome to the Perrysburg Pet Shelter!");
                 Console.WriteLine("What would you like to do?");
-                Console.WriteLine("1. Bringing in a new Pet?");
+                Console.WriteLine("1. I'm Bringing in a new Pet");
                 Console.WriteLine("2. Feed the Pets");
                 Console.WriteLine("3. Play with all of the Pets");
                 Console.WriteLine("4. Play with a single Pet");
@@ -40,7 +41,7 @@ namespace VirtualPet
                         newPet.SetSpecies(species);
                         break;
                     case "2":
-                        petShelter.PrintAllPets();
+                        Console.WriteLine($"{petShelter.PrintAllPets()}");
                         petShelter.FeedAll();
                         Console.WriteLine("You fed the pets!");
                         break;
@@ -54,12 +55,14 @@ namespace VirtualPet
                         Console.WriteLine("Which pet would you like to play with?");
                         newPet.SetPetType(Console.ReadLine());
                         newPet.Play();
+                        Console.WriteLine($"You played with {newPet.GetName()}!");
                         break;
                     case "5":
                         petShelter.PrintAllPets();
                         Console.WriteLine("Which pet would you like to adpot?");
                         newPet.SetPetType(Console.ReadLine());
                         petShelter.RemovePet(newPet);
+                        Console.WriteLine($"You gave {newPet.GetName()} a good home!");
                         break;
                     case "6":
                         petShelter.PrintAllPets();
