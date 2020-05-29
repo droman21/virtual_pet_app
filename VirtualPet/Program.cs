@@ -17,7 +17,7 @@ namespace VirtualPet
             while (keepThinking)
             {
                 petShelter.PrintAllPets();
-
+                Console.WriteLine("\n");
                 Console.WriteLine("Hi and Welcome to the Perrysburg Pet Shelter!");
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("1. I'm Bringing in a new Pet");
@@ -57,8 +57,9 @@ namespace VirtualPet
                     case "4":
                         petShelter.PrintAllPets();
                         Console.WriteLine("Which pet would you like to play with?");
-                        newPet.SetSpecies(Console.ReadLine());
-                        newPet.Play();
+                        string petToPlay = Console.ReadLine();
+                        newPet = petShelter.PetSelect(petToPlay);
+                        petShelter.Play(newPet);
                         Console.WriteLine($"You played with {newPet.GetName()}!");
                         break;
                     case "5":

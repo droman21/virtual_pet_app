@@ -9,17 +9,24 @@ namespace VirtualPet
 {
     public class Shelter
     {
-        //public string myPetShelter { get; set; }
+        public string Species { get; set; }
+        public string PetType { get; set; }
+        public string Name { get; set; }
+        public int Boredom { get; set; }
+        public int Hunger { get; set; }
+        public int Health { get; set; }
 
         public List<Pet> allPets = new List<Pet>();
 
+        
+        
         public Pet PetSelect(string name)
         {
             foreach (Pet pet in allPets)
             {
                 if (name == pet.GetName())
                 {
-                    //console.writeline 
+                    Console.WriteLine("Here's your pet!");
                     return pet;
                 }
             }
@@ -30,7 +37,7 @@ namespace VirtualPet
         {
             foreach (Pet pet in allPets)
             {
-                Console.WriteLine($"{pet.Name} | Hunger{pet.Hunger} | Boredom{pet.Boredom} | Health{pet.Health}");
+                Console.WriteLine($"Name: {pet.Name} | Species: {pet.Species} | Hunger: {pet.Hunger} | Boredom: {pet.Boredom} | Health: {pet.Health}");
             }
         }
 
@@ -63,6 +70,11 @@ namespace VirtualPet
         {
             allPets.Remove(pet);
         }
-
+        public void Play(Pet pet)
+        {
+            Hunger += 10;
+            Boredom -= 20;
+            Health += 10;
+        }
     }
 }
