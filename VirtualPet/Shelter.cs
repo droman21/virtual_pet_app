@@ -9,16 +9,26 @@ namespace VirtualPet
 {
     public class Shelter
     {
-        public string myPetShelter { get; set; }
+        //public string myPetShelter { get; set; }
 
         public List<Pet> allPets = new List<Pet>();
-        
-        List<Pet> PetList = new List<Pet>();
-       
+
+        public Pet PetSelect(string name)
+        {
+            foreach (Pet pet in allPets)
+            {
+                if (name == pet.GetName())
+                {
+                    //console.writeline 
+                    return pet;
+                }
+            }
+            return null;
+        }
 
         public void PrintAllPets()
         {
-            foreach (Pet pet in PetList)
+            foreach (Pet pet in allPets)
             {
                 Console.WriteLine($"{pet.Name} | Hunger{pet.Hunger} | Boredom{pet.Boredom} | Health{pet.Health}");
             }
@@ -26,21 +36,21 @@ namespace VirtualPet
 
         public void FeedAll()
         {
-            foreach (Pet pet in PetList)
+            foreach (Pet pet in allPets)
             {
                 pet.Feed();
             }
         }
         public void PlayAll()
         {
-            foreach (Pet pet in PetList)
+            foreach (Pet pet in allPets)
             {
                 pet.Play();
             }
         }
         public void DoctorAll()
         {
-            foreach (Pet pet in PetList)
+            foreach (Pet pet in allPets)
             {
                 pet.SeeDoctor();
             }
