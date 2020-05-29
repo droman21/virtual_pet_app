@@ -16,12 +16,10 @@ namespace VirtualPet
 
             while (keepThinking)
             {
-                petShelter.PrintAllPets();
-                Console.WriteLine("\n");
                 Console.WriteLine("Hi and Welcome to the Perrysburg Pet Shelter!");
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("1. I'm Bringing in a new Pet");
-                Console.WriteLine("2. Feed the Pets");
+                Console.WriteLine("2. Feed all of the Pets");
                 Console.WriteLine("3. Play with all of the Pets");
                 Console.WriteLine("4. Play with a single Pet");
                 Console.WriteLine("5. Adopt a Pet");
@@ -40,19 +38,22 @@ namespace VirtualPet
                         Console.WriteLine("What species is your pet?");
                         string species = Console.ReadLine();
                         newPet.SetSpecies(species);
-
                         petShelter.AddPet(newPet);
-                        
+                        petShelter.PrintAllPets();
+                        Console.WriteLine("\n");
+
                         break;
                     case "2":
                         petShelter.PrintAllPets();
                         petShelter.FeedAll();
                         Console.WriteLine("You fed the pets!");
+                        Console.WriteLine("\n");
                         break;
                     case "3":
                         petShelter.PrintAllPets();
                         petShelter.PlayAll();
                         Console.WriteLine("You played with the pets!");
+                        Console.WriteLine("\n");
                         break;
                     case "4":
                         petShelter.PrintAllPets();
@@ -61,6 +62,7 @@ namespace VirtualPet
                         newPet = petShelter.PetSelect(petToPlay);
                         petShelter.Play(newPet);
                         Console.WriteLine($"You played with {newPet.GetName()}!");
+                        Console.WriteLine("\n");
                         break;
                     case "5":
                         petShelter.PrintAllPets();
@@ -69,6 +71,7 @@ namespace VirtualPet
                         newPet = petShelter.PetSelect(petToAdopt);
                         petShelter.RemovePet(newPet);
                         Console.WriteLine($"You gave {newPet.GetName()} a good home!");
+                        Console.WriteLine("\n");
                         break;
                     case "6":
                         keepThinking = false;
