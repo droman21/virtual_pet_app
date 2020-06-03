@@ -45,7 +45,7 @@ namespace VirtualPet
         }
         public int GetMaintenance()
         {
-            return MaintenanceLevel;
+           return MaintenanceLevel;
         }
         public void GiveMaintenance()
         {

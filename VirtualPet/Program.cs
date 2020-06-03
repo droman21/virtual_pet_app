@@ -9,10 +9,8 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-           
             Shelter petShelter = new Shelter();
             bool keepThinking = true;
-
             while (keepThinking)
             {
                 Console.WriteLine("Hi and Welcome to the Perrysburg Pet Shelter!");
@@ -28,7 +26,6 @@ namespace VirtualPet
                 Console.WriteLine("9. Leave the Shelter");
         
                 string menuChoice = Console.ReadLine().ToLower();
-
                 switch (menuChoice)
                 {
                     case "1":

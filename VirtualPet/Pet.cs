@@ -20,9 +20,10 @@ namespace VirtualPet
             Species = species;
             
         }
-
         public abstract void Play();
-       
+        public abstract void Tick();
+        public abstract void GetStatus();
+
 
         public void SetSpecies(string species)
         {
@@ -48,11 +49,6 @@ namespace VirtualPet
         {
             return Species;
         }
-
-        public abstract void Tick();
-        public abstract void GetStatus();
-        
-        
     }
     
 

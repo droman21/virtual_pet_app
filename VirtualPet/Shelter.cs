@@ -18,7 +18,7 @@ namespace VirtualPet
             {
                 if (name == pet.GetName())
                 {
-                    Console.WriteLine("Here's your organic pet!");
+                    Console.WriteLine("Here's your pet!");
                     return pet;
                 }
             }

@@ -44,7 +44,6 @@ namespace VirtualPet
             Hunger -= 40;
             if (Hunger < 0)
                 Hunger = 0;
-
             Console.WriteLine("You fed the Pet!");
         }
         internal void Rest()
