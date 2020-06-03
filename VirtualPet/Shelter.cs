@@ -9,9 +9,8 @@ namespace VirtualPet
 {
     public class Shelter
     {
-
          
-         public List<Pet> allPets = new List<Pet>();
+        public List<Pet> allPets = new List<Pet>();
         
         public Pet PetSelect(string name)
         {
@@ -49,15 +48,10 @@ namespace VirtualPet
         {
             foreach (Pet pet in allPets)
             {
-  
                 if(pet is OrganicPet)
                 {
-
                     ((OrganicPet)pet).Feed();
-
                 }
-                
-               
             }
         }
         public void PlayAll()
@@ -73,9 +67,7 @@ namespace VirtualPet
             {
                 if (pet is OrganicPet)
                 {
-        
                     ((OrganicPet)pet).SeeDoctor();
-
                 }
             }
         }

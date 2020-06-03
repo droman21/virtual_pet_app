@@ -10,7 +10,6 @@ namespace VirtualPet
         public int MaintenanceLevel { get; set; }
         public int PerformanceLevel { get; set; }
 
-        
         public RoboticPet (string petName, string species):base(petName, species)
         {
             this.Name = petName;
@@ -18,9 +17,7 @@ namespace VirtualPet
             Boredom = 60;
             PerformanceLevel = 30;
             MaintenanceLevel = 15;   
-
         }
-       
         public void SetRobotName(string robotname)
         {
             Name = robotname;
@@ -57,9 +54,7 @@ namespace VirtualPet
         }
         public override void GetStatus()
         {
-
             Console.WriteLine($"Name: {this.Name} | Species: {this.Species} | Hunger: {this.OilLevel} | Boredom: {this.Boredom} | Health: {this.MaintenanceLevel}");
-
         }
         public override void Play()
         {

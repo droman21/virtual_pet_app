@@ -8,26 +8,21 @@ namespace VirtualPet.Tests
 
     public class RobotPetTests
     {
-
         private RoboticPet testPet = null;
 
         public RobotPetTests()
         {
-
             testPet = new RoboticPet("Darth Vader", "CAT");
-
         }
         public void Pet_Constructor_Should_Instantiate_Pet_Object()
         {
             Assert.NotNull(testPet);
         }
-
         [Fact]
         public void Pet_Should_Have_Name()
         {
             Assert.NotNull(testPet.Name);
         }
-
         [Fact]
         public void SetName_Should_Assign_Pet_Name_Property()
         {
@@ -49,18 +44,17 @@ namespace VirtualPet.Tests
         [Fact]
         public void SetSpecies_Should_Assign_Pet_Species_Property()
         {
-            testPet.SetSpecies("CAT");
-            Assert.Equal("CAT", testPet.Species);
+            testPet.SetSpecies("Cat");
+            Assert.Equal("Cat", testPet.Species);
         }
 
         [Fact]
         public void GetSpecies_Should_Get_Pet_Species_Value()
         {
-            testPet.SetSpecies("DOG");
+            testPet.SetSpecies("Dog");
             string testPetSpecies = testPet.Species;
-            Assert.Equal("DOG", testPetSpecies);
+            Assert.Equal("Dog", testPetSpecies);
         }
-
         [Fact]
         public void Pet_Should_Have_Oil()
         {
