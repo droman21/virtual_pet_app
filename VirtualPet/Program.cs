@@ -43,12 +43,12 @@ namespace VirtualPet
                         petShelter.PrintAllPets();
                         Console.WriteLine("\n");
                         break;
-                    //case "2":
+                    case "2":
                         Console.WriteLine("What is your mechcanical pet's name?");
                         string name = Console.ReadLine();
                         newPet.SetName(name);
 
-                        Console.WriteLine("What type is your pet? (Example: Robot or Cyborg");
+                        Console.WriteLine("What type is your mechcanical pet? (Example: Robot or Cyborg");
                         string species = Console.ReadLine();
                         newPet.SetSpecies(species);
                         petShelter.AddPet(newPet);
