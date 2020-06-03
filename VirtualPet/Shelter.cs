@@ -11,13 +11,25 @@ namespace VirtualPet
     {
 
         public List<Pet> allPets = new List<Pet>();
-
+        public List<RoboticPet> allRobotPets = new List<RoboticPet>();
         
         public Pet PetSelect(string name)
         {
             foreach (Pet pet in allPets)
             {
                 if (name == pet.GetName())
+                {
+                    Console.WriteLine("Here's your pet!");
+                    return pet;
+                }
+            }
+            return null;
+        }
+        public RoboticPet RobotPetSelect(string robotname)
+        {
+            foreach (RoboticPet pet in allPets)
+            {
+                if (robotname == pet.GetRobotName())
                 {
                     Console.WriteLine("Here's your pet!");
                     return pet;
@@ -43,7 +55,7 @@ namespace VirtualPet
         }
         public void PlayAll()
         {
-            foreach (Pet pet in allPets)
+            foreach (OrganicPet pet in allPets)
             {
                 pet.Play();
             }
@@ -63,11 +75,13 @@ namespace VirtualPet
         {
             allPets.Remove(pet);
         }
-        public void Play(Pet pet)
+        public void GiveOil()
         {
-            Hunger += 10;
-            Boredom -= 20;
-            Health += 10;
+            foreach (RoboticPet pet in allPets)
+            {
+                pet.GiveOil();
+            }
         }
     }
+
 }

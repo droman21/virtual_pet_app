@@ -75,9 +75,13 @@ namespace VirtualPet
                         petShelter.PrintAllPets();
                         Console.WriteLine("Which pet would you like to play with?");
                         string petToPlay = Console.ReadLine();
+                        string roboticPetToPlay = Console.ReadLine();
                         newPet = petShelter.PetSelect(petToPlay);
+                        newRoboticPet = (RoboticPet)petShelter.PetSelect(roboticPetToPlay);
                         petShelter.Play(newPet);
+                        petShelter.Play(newRoboticPet);
                         Console.WriteLine($"You played with {newPet.GetName()}!");
+                        Console.WriteLine($"You played with {newRoboticPet.GetName()}!");
                         Console.WriteLine("\n");
                         break;
                     case "6":
