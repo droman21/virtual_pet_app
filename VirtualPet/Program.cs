@@ -78,8 +78,8 @@ namespace VirtualPet
                         string roboticPetToPlay = Console.ReadLine();
                         newPet = petShelter.PetSelect(petToPlay);
                         newRoboticPet = (RoboticPet)petShelter.PetSelect(roboticPetToPlay);
-                        petShelter.Play(newPet);
-                        petShelter.Play(newRoboticPet);
+                        petShelter.PlayAll();
+                        petShelter.RobotPlay();
                         Console.WriteLine($"You played with {newPet.GetName()}!");
                         Console.WriteLine($"You played with {newRoboticPet.GetName()}!");
                         Console.WriteLine("\n");
@@ -98,10 +98,14 @@ namespace VirtualPet
                     case "7":
                         petShelter.PrintAllPets();
                         petShelter.GiveOil();
-                        Console.WriteLine("You fed the pets!");
+                        Console.WriteLine("You gave them oil!");
                         Console.WriteLine("\n");
                         break;
                     case "8":
+                        petShelter.PrintAllPets();
+                        petShelter.GiveMaintenance();
+                        Console.WriteLine("You gave them maintenance!");
+                        Console.WriteLine("\n");
                         break;
                     case "9":
                         keepThinking = false;

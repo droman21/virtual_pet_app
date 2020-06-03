@@ -47,10 +47,6 @@ namespace VirtualPet
         {
             return Name;
         }
-        public int GetMaintenance()
-        {
-            return MaintenanceLevel;
-        }
         public int GetOilLevel()
         {
             return OilLevel;
@@ -59,12 +55,20 @@ namespace VirtualPet
         {
             OilLevel += 35;
         }
+        public void RobotPlay()
+        {
+            OilLevel -= 5;
+            Boredom -= 10;
+        }
+        public int GetMaintenance()
+        {
+            return MaintenanceLevel;
+        }
         public void GiveMaintenance()
         {
             OilLevel += 15;
             PerformanceLevel += 35;
         }
-
     }
 
 

@@ -37,7 +37,6 @@ namespace VirtualPet
             }
             return null;
         }
-
         public void PrintAllPets()
         {
             foreach (Pet pet in allPets)
@@ -45,7 +44,6 @@ namespace VirtualPet
                 Console.WriteLine($"Name: {pet.Name} | Species: {pet.Species} | Hunger: {pet.Hunger} | Boredom: {pet.Boredom} | Health: {pet.Health}");
             }
         }
-
         public void FeedAll()
         {
             foreach (Pet pet in allPets)
@@ -80,6 +78,20 @@ namespace VirtualPet
             foreach (RoboticPet pet in allPets)
             {
                 pet.GiveOil();
+            }
+        }
+        public void RobotPlay()
+        {
+            foreach (RoboticPet pet in allPets)
+            {
+                pet.RobotPlay();
+            }
+        }
+        public void GiveMaintenance()
+        {
+            foreach (RoboticPet pet in allPets)
+            {
+                pet.GiveMaintenance();
             }
         }
     }
