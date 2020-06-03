@@ -29,7 +29,7 @@ namespace VirtualPet
                 Console.WriteLine("7. Give Robot Pet Oil");
                 Console.WriteLine("8. Give Robot Pet Maintenance");
                 Console.WriteLine("9. Leave the Shelter");
-                //Console.Clear();
+        
                 string menuChoice = Console.ReadLine().ToLower();
 
                 switch (menuChoice)
