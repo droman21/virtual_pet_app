@@ -13,7 +13,6 @@ namespace VirtualPet
         public List<Pet> allPets = new List<Pet>();
 
         
-        
         public Pet PetSelect(string name)
         {
             foreach (Pet pet in allPets)

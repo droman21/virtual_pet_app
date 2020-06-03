@@ -9,25 +9,11 @@ namespace VirtualPet
 
         public string RobotPetType { get; set; }
         public string RobotPetName { get; set; }
-        public int GiveRobotOil { get; set; }
+        public int OilLevel { get; set; }
+        public int MaintenanceLevel { get; set; }
+        public int PerformanceLevel { get; set; }
         
-
-        public RoboticPet(string robotname, string type)
-        {
-            Name = robotname;
-            PetType = type;
-            Boredom = 60;
-            OilLevel = 60;
-            Performance = 30;
-            MaintenanceLevel = 45;
-        }
-        public RoboticPet()
-        {
-            Boredom = 60;
-            OilLevel = 60;
-            Performance = 30;
-            MaintenanceLevel = 45;
-        }
+        
         public void SetRobotName(string robotname)
         {
             Name = robotname;
@@ -55,10 +41,6 @@ namespace VirtualPet
         public void GiveOil()
         {
             OilLevel += 35;
-        }
-        public void GiveMaintenance()
-        {
-            MaintenanceLevel += 15;
         }
         public void GiveMaintenance()
         {

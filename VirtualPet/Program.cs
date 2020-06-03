@@ -85,11 +85,21 @@ namespace VirtualPet
                         Console.WriteLine("Which pet would you like to adopt?");
                         string petToAdopt = Console.ReadLine();
                         newPet = petShelter.PetSelect(petToAdopt);
+                        newRoboticPet = (RoboticPet)petShelter.PetSelect(petToAdopt);
                         petShelter.RemovePet(newPet);
+                        petShelter.RemovePet(newRoboticPet);
                         Console.WriteLine($"You gave {newPet.GetName()} a good home!");
                         Console.WriteLine("\n");
                         break;
                     case "7":
+                        petShelter.PrintAllPets();
+                        petShelter.GiveOil();
+                        Console.WriteLine("You fed the pets!");
+                        Console.WriteLine("\n");
+                        break;
+                    case "8":
+                        break;
+                    case "9":
                         keepThinking = false;
                         Console.WriteLine("Good Bye! Thanks for Visiting!");
                         break;
