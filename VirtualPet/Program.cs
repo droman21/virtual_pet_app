@@ -10,8 +10,10 @@ namespace VirtualPet
         static void Main(string[] args)
         {
             Pet newPet = new Pet();
+            RoboticPet newRoboticPet = new RoboticPet();
             Shelter petShelter = new Shelter();
             petShelter.AddPet(newPet);
+            petShelter.AddPet(newRoboticPet);
             bool keepThinking = true;
 
             while (keepThinking)
@@ -19,12 +21,14 @@ namespace VirtualPet
                 Console.WriteLine("Hi and Welcome to the Perrysburg Pet Shelter!");
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("1. I'm Bringing in a New Organic Pet");
-                Console.WriteLine("2. I'm Brining in a New Mechcanical Pet");
-                Console.WriteLine("3. Feed all of the Pets");
+                Console.WriteLine("2. I'm Brining in a New Robot Pet");
+                Console.WriteLine("3. Feed all of the Organic Pets");
                 Console.WriteLine("4. Play with all of the Pets");
                 Console.WriteLine("5. Play with a Single Pet");
                 Console.WriteLine("6. Adopt a Pet");
-                Console.WriteLine("7. Leave the Shelter");
+                Console.WriteLine("7. Give Robot Pet Oil");
+                Console.WriteLine("8. Give Robot Pet Maintenance");
+                Console.WriteLine("9. Leave the Shelter");
                 //Console.Clear();
                 string menuChoice = Console.ReadLine().ToLower();
 
@@ -36,7 +40,7 @@ namespace VirtualPet
                         string name = Console.ReadLine();
                         newPet.SetName(name);
 
-                        Console.WriteLine("What species is your organic pet? (Example: tiger, dog, fish");
+                        Console.WriteLine("What species is your organic pet? (Examples: tiger, dog, fish");
                         string species = Console.ReadLine();
                         newPet.SetSpecies(species);
                         petShelter.AddPet(newPet);
@@ -44,14 +48,14 @@ namespace VirtualPet
                         Console.WriteLine("\n");
                         break;
                     case "2":
-                        Console.WriteLine("What is your mechcanical pet's name?");
-                        string name = Console.ReadLine();
-                        newPet.SetName(name);
+                        Console.WriteLine("What is your robot pet's name?");
+                        string robotname = Console.ReadLine();
+                        newRoboticPet.SetName(robotname);
 
-                        Console.WriteLine("What type is your mechcanical pet? (Example: Robot or Cyborg");
-                        string species = Console.ReadLine();
-                        newPet.SetSpecies(species);
-                        petShelter.AddPet(newPet);
+                        Console.WriteLine("What type is your robot pet? (Examples: Robot, Cyborg, Transformer");
+                        string type = Console.ReadLine();
+                        newRoboticPet.SetRobotType(type);
+                        petShelter.AddPet(newRoboticPet);
                         petShelter.PrintAllPets();
                         Console.WriteLine("\n");
                         break;

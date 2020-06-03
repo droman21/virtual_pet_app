@@ -6,13 +6,6 @@ namespace VirtualPet
 {
     class RoboticPet : Pet
     {
-        //Add Robotic Pets to the Shelter
-
-        //Play with Robotic Pets
-
-        //Give Oil to Robotic Pets
-
-        //Take Robotic Pet For Maintenance
 
         public string RobotPetType { get; set; }
         public string RobotPetName { get; set; }
@@ -26,6 +19,7 @@ namespace VirtualPet
             Boredom = 60;
             OilLevel = 60;
             Performance = 30;
+            MaintenanceLevel = 45;
         }
         public RoboticPet()
         {
@@ -58,30 +52,23 @@ namespace VirtualPet
         {
             return OilLevel;
         }
-        public void Feed()
+        public void GiveOil()
         {
-            Hunger -= 40;
+            OilLevel += 35;
         }
-        public void SeeDoctor()
+        public void GiveMaintenance()
         {
-            Health += 30;
+            MaintenanceLevel += 15;
         }
-        public void Play()
+        public void GiveMaintenance()
         {
-            Hunger += 10;
-            Boredom -= 20;
-            Health += 10;
-        }
-        public void Tick()
-        {
-            Hunger += 5;
-            Boredom += 5;
-            Health -= 5;
+            OilLevel += 15;
+            PerformanceLevel += 35;
         }
 
     }
 
 
 }
-    }
-}
+    
+
