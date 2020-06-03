@@ -4,33 +4,23 @@ using System.Text;
 
 namespace VirtualPet
 {
-    class RoboticPet : Pet
+    public class RoboticPet : Pet
     {
-
-        public string RobotPetType { get; set; }
-        public string RobotPetName { get; set; }
         public int OilLevel { get; set; }
         public int MaintenanceLevel { get; set; }
         public int PerformanceLevel { get; set; }
 
-
         
-        public RoboticPet (string robotname, string type)
+        public RoboticPet (string petName, string species):base(petName, species)
         {
-            Name = robotname;
-            PetType = type;
+            this.Name = petName;
             OilLevel = 45;
             Boredom = 60;
             PerformanceLevel = 30;
-            MaintenanceLevel = 15;
+            MaintenanceLevel = 15;   
+
         }
-        public RoboticPet()
-        {
-            OilLevel = 45;
-            Boredom = 60;
-            PerformanceLevel = 30;
-            MaintenanceLevel = 15;
-        }
+       
         public void SetRobotName(string robotname)
         {
             Name = robotname;
@@ -42,10 +32,6 @@ namespace VirtualPet
         public string GetRobotType()
         {
             return PetType;
-        }
-        public string GetRobotName()
-        {
-            return Name;
         }
         public int GetOilLevel()
         {
@@ -69,6 +55,30 @@ namespace VirtualPet
             OilLevel += 15;
             PerformanceLevel += 35;
         }
+        public override void GetStatus()
+        {
+
+            Console.WriteLine($"Name: {this.Name} | Species: {this.Species} | Hunger: {this.OilLevel} | Boredom: {this.Boredom} | Health: {this.MaintenanceLevel}");
+
+        }
+        public override void Play()
+        {
+            Boredom -= 5;
+            OilLevel -= 5;
+            PerformanceLevel += 5;
+        }
+        public override void Tick()
+        {
+            MaintenanceLevel -= 5;
+            OilLevel -= 5;
+            PerformanceLevel -= 5;
+        }
+        public void SeeMechanic()
+        {
+            MaintenanceLevel = 100;
+        }
+
+
     }
 
 

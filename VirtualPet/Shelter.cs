@@ -10,8 +10,8 @@ namespace VirtualPet
     public class Shelter
     {
 
-        public List<Pet> allPets = new List<Pet>();
-        public List<RoboticPet> allRobotPets = new List<RoboticPet>();
+         
+         public List<Pet> allPets = new List<Pet>();
         
         public Pet PetSelect(string name)
         {
@@ -19,7 +19,7 @@ namespace VirtualPet
             {
                 if (name == pet.GetName())
                 {
-                    Console.WriteLine("Here's your pet!");
+                    Console.WriteLine("Here's your organic pet!");
                     return pet;
                 }
             }
@@ -27,12 +27,13 @@ namespace VirtualPet
         }
         public RoboticPet RobotPetSelect(string robotname)
         {
-            foreach (RoboticPet pet in allPets)
+            foreach (Pet pet in this.allPets)
             {
-                if (robotname == pet.GetRobotName())
+                if (robotname == pet.Name)
                 {
-                    Console.WriteLine("Here's your pet!");
-                    return pet;
+                    Console.WriteLine("Here's your robot pet!");
+                    RoboticPet roboPet = (RoboticPet)pet;
+                    return roboPet;
                 }
             }
             return null;
@@ -41,14 +42,22 @@ namespace VirtualPet
         {
             foreach (Pet pet in allPets)
             {
-                Console.WriteLine($"Name: {pet.Name} | Species: {pet.Species} | Hunger: {pet.Hunger} | Boredom: {pet.Boredom} | Health: {pet.Health}");
+                pet.GetStatus();
             }
         }
         public void FeedAll()
         {
             foreach (Pet pet in allPets)
             {
-                pet.Feed();
+  
+                if(pet is OrganicPet)
+                {
+
+                    ((OrganicPet)pet).Feed();
+
+                }
+                
+               
             }
         }
         public void PlayAll()
@@ -62,7 +71,12 @@ namespace VirtualPet
         {
             foreach (Pet pet in allPets)
             {
-                pet.SeeDoctor();
+                if (pet is OrganicPet)
+                {
+        
+                    ((OrganicPet)pet).SeeDoctor();
+
+                }
             }
         }
         public void AddPet(Pet pet)
