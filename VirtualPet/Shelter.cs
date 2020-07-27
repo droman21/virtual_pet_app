@@ -11,7 +11,22 @@ namespace VirtualPet
     {
          
         public List<Pet> allPets = new List<Pet>();
-        
+
+        private bool Test()
+        {
+            return test(new List<string>() { "Name", "Species" });
+        }
+        private bool test(List<string> Lst = null)
+        {
+            List<string> tempList; // give me a name
+            if (Lst == null)
+                tempList = new List<string>() { "Name", "Species" };
+            else
+                tempList = Lst;
+
+            return false;
+        }
+
         public Pet PetSelect(string name)
         {
             foreach (Pet pet in allPets)

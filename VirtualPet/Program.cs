@@ -1,5 +1,7 @@
-﻿using Microsoft.VisualBasic;
+﻿using ConsoleTables;
+using Microsoft.VisualBasic;
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Transactions;
 
@@ -13,6 +15,7 @@ namespace VirtualPet
             bool keepThinking = true;
             while (keepThinking)
             {
+                petShelter.PrintAllPets();
                 Console.WriteLine("Hi and Welcome to the Perrysburg Pet Shelter!");
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("1. I'm Bringing in a New Organic Pet");
