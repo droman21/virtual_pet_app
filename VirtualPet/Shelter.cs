@@ -18,13 +18,18 @@ namespace VirtualPet
         }
         private bool test(List<string> Lst = null)
         {
-            List<string> tempList; // give me a name
+            List<string> tempList;
             if (Lst == null)
                 tempList = new List<string>() { "Name", "Species" };
             else
                 tempList = Lst;
 
             return false;
+        }
+
+        internal void ShowOrganicPets()
+        {
+            throw new NotImplementedException();
         }
 
         public Pet PetSelect(string name)
@@ -108,13 +113,38 @@ namespace VirtualPet
                 pet.RobotPlay();
             }
         }
-        public void GiveMaintenance()
+        public void ShowOrganicPets(List<OrganicPet> organicPets)
         {
-            foreach (RoboticPet pet in allPets)
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nORGANIC PETS");
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Pet Name   Type      Boredom | Energy | Health | Hunger |  Hydration | Irritable");
+            Console.ResetColor();
+
+            if (organicPets.Count >= 1)
             {
-                pet.GiveMaintenance();
+                foreach (OrganicPet someOrganicPet in organicPets)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write($"{someOrganicPet.GetName().PadRight(11, ' ')}");
+                    Console.Write($"{someOrganicPet.GetSpecies().PadRight(12, ' ')}");
+                    Console.ResetColor();
+                    Console.Write($"{someOrganicPet.GetBoredom().ToString().PadRight(10, ' ')}");
+                    Console.Write($"{someOrganicPet.GetHealth().ToString().PadRight(8, ' ')}");
+                    Console.Write($"{someOrganicPet.GetHunger().ToString().PadRight(11, ' ')}");
+                }
+            }
+            else
+            {
+                ShowNoOrganicPetsInShelterMessage();
             }
         }
+        private void ShowNoOrganicPetsInShelterMessage()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 
 }

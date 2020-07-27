@@ -7,11 +7,12 @@ namespace VirtualPet
 {
     public abstract class Pet
     {
-
         public int Boredom { get; set; }
         public string Species { get; set; }
         public string PetType { get; set; }
         public string Name { get; set; }
+        public int Health { get; set; }
+        public int Hunger { get; set; }
 
 
         public Pet(string name, string species)
@@ -48,6 +49,25 @@ namespace VirtualPet
         public string GetSpecies()
         {
             return Species;
+        }
+        public int GetBoredom()
+        {
+            return Boredom;
+        }
+        public int GetHealth()
+        {
+            return Health;
+        }
+        public int GetHunger()
+        {
+            return Hunger;
+        }
+        public void GiveMaintenance()
+        {
+            foreach (RoboticPet pet in allPets)
+            {
+                pet.GiveMaintenance();
+            }
         }
     }
     

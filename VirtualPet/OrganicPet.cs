@@ -6,20 +6,19 @@ namespace VirtualPet
 {
     public class OrganicPet : Pet
     {
-        public int Hunger { get;  set; }
         public int Thirst { get; set; }
         public int Waste { get; set; }
         public int Sleepiness { get; set; }
         public int Sickness { get; set; }
-        public int Health { get; set; }
 
 
-        public OrganicPet(String petName, string species) : base(petName, species)
+        public OrganicPet(string petName, string species) : base(petName, species)
         {
             Hunger = 50;
             Boredom = 60;
             Health = 30;
         }
+
         public override void Tick()
         {
             Boredom += 5;
