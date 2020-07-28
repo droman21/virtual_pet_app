@@ -54,5 +54,6 @@ namespace VirtualPet
         {
             Console.WriteLine($"Name: {this.Name} | Species: {this.Species} | Hunger: {this.Hunger} | Boredom: {this.Boredom} | Health: {this.Health}");
         }
+        
     }
 }

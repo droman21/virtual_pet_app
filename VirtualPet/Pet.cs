@@ -62,13 +62,6 @@ namespace VirtualPet
         {
             return Hunger;
         }
-        public void GiveMaintenance()
-        {
-            foreach (RoboticPet pet in allPets)
-            {
-                pet.GiveMaintenance();
-            }
-        }
     }
     
 

@@ -106,6 +106,13 @@ namespace VirtualPet
                 pet.GiveOil();
             }
         }
+        public void GiveMaintenace()
+        {
+            foreach (RoboticPet pet in allPets)
+            {
+                pet.GiveMaintenance();
+            }
+        }
         public void RobotPlay()
         {
             foreach (RoboticPet pet in allPets)
@@ -119,7 +126,7 @@ namespace VirtualPet
             Console.WriteLine("\nORGANIC PETS");
             Console.BackgroundColor = ConsoleColor.Cyan;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("Pet Name   Type      Boredom | Energy | Health | Hunger |  Hydration | Irritable");
+            Console.WriteLine("Pet Name   Type      Boredom | Health | Hunger |");
             Console.ResetColor();
 
             if (organicPets.Count >= 1)

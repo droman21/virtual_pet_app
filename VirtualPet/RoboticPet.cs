@@ -47,7 +47,7 @@ namespace VirtualPet
         {
            return MaintenanceLevel;
         }
-        public void GiveMaintenance()
+        public new void GiveMaintenance()
         {
             OilLevel += 15;
             PerformanceLevel += 35;
@@ -73,9 +73,7 @@ namespace VirtualPet
             MaintenanceLevel = 100;
         }
 
-
     }
-
 
 }
     
